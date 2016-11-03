@@ -1,0 +1,16 @@
+<!-- pipesTemplate.html -->
+<h1>Dates</h1>
+<!-- Sep 1, 2015 -->
+<p>{{date | date:'mediumDate'}}</p>
+<!-- September 1, 2015 -->
+<p>{{date | date:'yMMMMd'}}</p>
+<!-- 3:50 pm -->
+<p>{{date | date:'shortTime'}}</p>
+
+<h1>Decimals/Percentages</h1>
+
+<p>{{grade}}==>{{grade | percent: '.1'}}</p>
+<p>{{rating}}==>{{rating | number: '.1-2'}}</p>
+
+<h1>Custom Pipes - Convert Temperature</h1>
+<h2>{{temperature | demoPipe: 'celsius':1}}</h2>

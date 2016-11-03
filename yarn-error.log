@@ -1,0 +1,82 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
+
+PATH: 
+  D:\Program Files (x86)\cmder\bin;D:\Program Files (x86)\cmder\vendor\conemu-maximus5\ConEmu\Scripts;D:\Program Files (x86)\cmder\vendor\conemu-maximus5;D:\Program Files (x86)\cmder\vendor\conemu-maximus5\ConEmu;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Docker\Docker\Resources\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;D:\Program Files (x86)\cmder;C:\Program Files\Java\jdk1.8.0_101\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin;D:\Program Files (x86)\Heroku\bin;C:\Program Files (x86)\git\cmd;C:\Program Files (x86)\Git\cmd;C:\Program Files\MongoDB\Server\3.2\bin;D:\Program Files\mysql-5.7.16-winx64\bin;C:\Ruby23-x64\bin;C:\Users\littlestone\AppData\Roaming\npm;D:\Android\sdk\tools;D:\Android\sdk\platform-tools;D:\Program Files (x86)\cmder;D:\Program Files (x86)\cmder\bin;D:\Android\sdk\platform-tools;C:\Program Files\Docker Toolbox;D:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\littlestone\AppData\Local\Yarn\.bin;C:\Program Files\MongoDB\Server\3.2\bin;D:\Program Files\mysql-5.7.16-winx64\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\share\vim\vim74;D:\Program Files (x86)\cmder\
+
+Yarn version: 
+  0.16.1
+
+Node version: 
+  6.2.0
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "name": "ng2-page",
+    "version": "0.0.0",
+    "license": "MIT",
+    "angular-cli": {},
+    "scripts": {
+      "start": "ng serve",
+      "lint": "tslint \"src/**/*.ts\"",
+      "test": "ng test",
+      "pree2e": "webdriver-manager update",
+      "e2e": "protractor"
+    },
+    "private": true,
+    "dependencies": {
+      "@angular/common": "~2.0.0",
+      "@angular/compiler": "~2.0.0",
+      "@angular/core": "~2.0.0",
+      "@angular/forms": "~2.0.0",
+      "@angular/http": "~2.0.0",
+      "@angular/platform-browser": "~2.0.0",
+      "@angular/platform-browser-dynamic": "~2.0.0",
+      "@angular/router": "~3.0.0",
+      "bootstrap": "^3.3.7",
+      "core-js": "^2.4.1",
+      "font-awesome": "^4.7.0",
+      "jquery": "^2.2.4",
+      "rxjs": "5.0.0-beta.12",
+      "ts-helpers": "^1.1.1",
+      "underscore": "^1.8.3",
+      "zone.js": "^0.6.23"
+    },
+    "devDependencies": {
+      "@types/jasmine": "^2.2.30",
+      "@types/jquery": "^2.0.33",
+      "@types/node": "^6.0.42",
+      "@types/underscore": "^1.7.33",
+      "angular-cli": "1.0.0-beta.17",
+      "codelyzer": "~0.0.26",
+      "jasmine-core": "2.4.1",
+      "jasmine-spec-reporter": "2.5.0",
+      "karma": "1.2.0",
+      "karma-chrome-launcher": "^2.0.0",
+      "karma-cli": "^1.0.1",
+      "karma-jasmine": "^1.0.2",
+      "karma-remap-istanbul": "^0.2.1",
+      "protractor": "4.0.9",
+      "ts-node": "1.2.1",
+      "tslint": "3.13.0",
+      "typescript": "2.0.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+bower manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: connect ETIMEDOUT 192.30.253.113:443
+      at Object.exports._errnoException (util.js:953:11)
+      at exports._exceptionWithHostPort (util.js:976:20)
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1080:14)
