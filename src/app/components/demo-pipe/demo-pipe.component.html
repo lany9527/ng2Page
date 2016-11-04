@@ -1,4 +1,4 @@
-<app-basic-pipes></app-basic-pipes>
+<!--<app-basic-pipes></app-basic-pipes>-->
 
 <!--<h1>Dates</h1>-->
 <!-- Sep 1, 2015 -->
@@ -13,3 +13,29 @@
 <p>{{ grade | percent:'.2' }}</p>
 &lt;!&ndash; 09.12 &ndash;&gt;
 <p>{{ rating | number:'2.1-2' }}</p>-->
+
+<p>My name is <strong>{{ name | capitalize }}</strong>.</p>
+<!-----------------
+ordinal --pipe
+-------------------->
+<div>
+  <h1>ordinal --pipe</h1>
+  <ul>
+    <li *ngFor="let num of numbers">
+      {{ num | ordinal }}
+    </li>
+  </ul>
+</div>
+
+<!--------------------------
+players
+----------------------------->
+
+<div *ngFor="let team of teams">
+  <h1>{{team.name}}</h1>
+  <ul>
+    <li *ngFor="let player of players | filter:{teamId:team.id}">
+      {{player.firstName}} {{player.lastName}}
+    </li>
+  </ul>
+</div>
