@@ -34,6 +34,7 @@ import {CapitalizePipe} from './pipe/capitalize.pipe';
 import {NewsService} from "./services/news.service";
 import { NewsItemComponent } from './components/news-item/news-item.component';
 import { NewsDetailComponent } from './components/news-detail/news-detail.component';
+import { NewsSectionComponent } from './components/news-section/news-section.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { NewsDetailComponent } from './components/news-detail/news-detail.compon
     StarsComponent,
     NewsItemComponent,
     NewsDetailComponent,
+    NewsSectionComponent,
   ],
   imports: [
     BrowserModule,
