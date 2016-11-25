@@ -6,11 +6,12 @@ import {EmitterService} from "../../../services/emitter.service";
 @Component({
   selector: 'comment-form',
   templateUrl: 'comment-form.component.html',
-  styleUrls: ['comment-form.component.css']
+  styleUrls: ['comment-form.component.css'],
+  providers: [CommentService]
 })
 export class CommentFormComponent implements OnChanges {
   private editing = false;
-  private model = new Comment(new Date, '', '');
+  private model = new Comment(new Date(), '', '');
 
   @Input() editId: string;
   @Input() listId: string;
@@ -33,7 +34,7 @@ export class CommentFormComponent implements OnChanges {
     );
   }
   ngOnChanges() {
-    console.log("out");
+    console.log("update or add");
     EmitterService.get(this.editId).subscribe((comment: Comment) => {
       this.model = comment;
       this.editing = true;

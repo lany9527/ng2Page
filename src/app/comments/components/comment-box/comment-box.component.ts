@@ -18,9 +18,11 @@ export class CommentBoxComponent implements OnInit {
   }
 
   editComment(){
+    console.log("editComment");
     EmitterService.get(this.editId).emit(this.comment);
   }
   deleteComment(id: string){
+    console.log(id);
     this.commentService.removeComment(id)
       .subscribe(comments=>{
         EmitterService.get(this.listId).emit(comments);
