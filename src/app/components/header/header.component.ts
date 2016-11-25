@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   constructor() {
     this.items = [
       {path: '/', title: 'Home'},
-      {path: '/demo', title: 'Demo'}
+      // {path: '/demo', title: 'Demo'}
     ];
   }
 
