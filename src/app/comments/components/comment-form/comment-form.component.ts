@@ -1,4 +1,5 @@
 import {Component, OnInit, Input, OnChanges} from '@angular/core';
+import { NgForm }    from '@angular/forms';
 import {CommentService} from "../../services/comment.service";
 import {Comment} from "../../model/comment"
 import {Observable} from "rxjs";
@@ -10,28 +11,38 @@ import {EmitterService} from "../../../services/emitter.service";
   providers: [CommentService]
 })
 export class CommentFormComponent implements OnChanges {
+  constructor(private commentService: CommentService) {}
   private editing = false;
   private model = new Comment(new Date(), '', '');
 
   @Input() editId: string;
   @Input() listId: string;
-  constructor(private commentService: CommentService) { }
 
   submitComment(){
-    let commentOption: Observable<Comment[]>;
+    let commentOperation:Observable<Comment[]>;
+
     if(!this.editing){
-      commentOption = this.commentService.addComment(this.model);
-    }else {
-      commentOption = this.commentService.updateComment(this.model);
+      // Create a new comment
+      commentOperation = this.commentService.addComment(this.model)
+    } else {
+      // Update an existing comment
+      commentOperation = this.commentService.updateComment(this.model)
     }
-    commentOption.subscribe(
+
+    // Subscribe to observable
+    commentOperation.subscribe(
       comments => {
+        // Emit list event
         EmitterService.get(this.listId).emit(comments);
+        // Empty model
         this.model = new Comment(new Date(), '', '');
-        if (this.editing) this.editing = !this.editing;
+        // Switch editing status
+        if(this.editing) this.editing = !this.editing;
       },
-      err => console.log(err)
-    );
+      err => {
+        // Log errors if any
+        console.log(err);
+      });
   }
   ngOnChanges() {
     console.log("update or add");

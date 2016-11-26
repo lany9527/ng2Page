@@ -11,7 +11,7 @@ export class CommentService {
   constructor(private http: Http) {
   }
 
-  private commentsUrl = 'http://5837f9738405b21200fbd5a6.mockapi.io/api/v1/comment';
+  private commentsUrl = 'http://localhost:3000/api/comments';
   //获取所有评论
   getComments(): Observable<Comment[]> {
     return this.http.get(this.commentsUrl)

@@ -7,15 +7,12 @@ import {EmitterService} from "../../../services/emitter.service";
   templateUrl: 'comment-box.component.html',
   styleUrls: ['comment-box.component.css']
 })
-export class CommentBoxComponent implements OnInit {
+export class CommentBoxComponent {
+  constructor(private commentService: CommentService) {}
   //定义输入输出属性
   @Input() comment: Comment;
   @Input() listId: string;
   @Input() editId: string;
-  constructor(private commentService: CommentService) { }
-
-  ngOnInit() {
-  }
 
   editComment(){
     console.log("editComment");

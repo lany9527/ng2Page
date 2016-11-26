@@ -13,7 +13,7 @@ export class CommentListComponent implements OnInit, OnChanges {
   @Input() listId: string;
   //定义变量
   comments: Comment[];
-  constructor(private commentService: CommentService) { }
+  constructor(private commentService: CommentService) {}
   //加载评论
   loadComments(){
     this.commentService.getComments()
