@@ -16,23 +16,7 @@ export class UserComponent implements OnInit {
   constructor(public http: Http) {
   }
 
-  // 获取用户列表
-  getUsers() {
-    if (this.Lists) {
-      return Promise.resolve(this.Lists);
-    } else {
-      return new Promise(resolve => {
-        this.http.get('http://localhost:8080/api/users')
-          .map(res => res.json())
-          .subscribe(data => {
-            this.Lists = data;
-            console.log(this.Lists);
-            resolve(this.Lists);
-          })
-      })
-    }
 
-  }
 
   // 添加用户
   addUser(user) {
@@ -67,14 +51,16 @@ export class UserComponent implements OnInit {
         res.json()
       })
       .subscribe((user) => {
-        console.log(user), (error) => {
+        console.log(user);
+    },
+          (error) => {
           console.log(error)
         }
-      });
+      );
   }
 
   ngOnInit() {
-    this.getUsers();
+    // this.getUsers();
   }
 
 }

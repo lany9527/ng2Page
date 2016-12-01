@@ -12,6 +12,8 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import {CommentModule} from "./comments/comment.module";
 import { UserComponent } from './components/user/user.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { UserItemComponent } from './components/user-item/user-item.component';
 
 //service
 @NgModule({
@@ -20,7 +22,9 @@ import { UserComponent } from './components/user/user.component';
     HeaderComponent,
     HomeComponent,
     FooterComponent,
-    UserComponent
+    UserComponent,
+    UserListComponent,
+    UserItemComponent
   ],
   imports: [
     BrowserModule,
