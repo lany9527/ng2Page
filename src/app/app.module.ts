@@ -11,6 +11,7 @@ import {HomeComponent} from './pages/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import {CommentModule} from "./comments/comment.module";
+import { UserComponent } from './components/user/user.component';
 
 //service
 @NgModule({
@@ -18,7 +19,8 @@ import {CommentModule} from "./comments/comment.module";
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
