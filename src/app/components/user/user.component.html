@@ -1,21 +1,3 @@
-<div style="padding: 20px 100px 10px;">
-  <form class="bs-example bs-example-form" role="form" name="addUserForm"  (ngSubmit)="addUser(user)">
-    <div class="input-group">
-      <span class="input-group-addon">姓名</span>
-      <input type="text" class="form-control" name="name" [(ngModel)]="user.name">
-    </div>
-    <br>
-    <div class="input-group">
-      <span class="input-group-addon">年龄</span>
-      <input type="text" class="form-control" name="age" [(ngModel)]="user.age">
-    </div>
-    <br>
-    <div class="input-group">
-      <span class="input-group-addon">邮箱</span>
-      <input type="text" class="form-control" name="email" [(ngModel)]="user.email">
-    </div>
-    <br>
-    <button type="submit" class="btn btn-primary btn-block">添加用户</button>
-  </form>
-</div>
+<user-add></user-add>
+<user-list></user-list>
 

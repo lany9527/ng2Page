@@ -10,32 +10,10 @@ import 'rxjs/add/operator/catch';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  Lists: any;
+  // Lists: any;
   user: any = {};
 
   constructor(public http: Http) {
-  }
-
-
-
-  // 添加用户
-  addUser(user) {
-    console.log("add user");
-    let bodyString = JSON.stringify(user);
-    let headers = new Headers({'Content-Type': 'application/json'});
-    let options = new RequestOptions({headers: headers});
-
-    return this.http.post('http://localhost:8080/api/users', bodyString, options)
-      .map((res) => {
-        res.json()
-      })
-      // .catch((error) => { Observable.throw(error.json().error) })
-      .subscribe((user) => {
-        console.log(user)
-      }, (error) => {
-        console.log(error)
-      });
-
   }
 
   // 编辑用户信息

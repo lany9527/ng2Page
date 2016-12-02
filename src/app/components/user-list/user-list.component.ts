@@ -1,17 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, OnChanges, Input} from '@angular/core';
 import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import {EmitterService} from "../../services/emitter.service";
 @Component({
   selector: 'user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })
-export class UserListComponent implements OnInit {
+export class UserListComponent implements OnInit, OnChanges {
   Lists: any;
   user: any = {};
+  @Input() listId: string;
+  // public emitterService : EmitterService;
   constructor(public http: Http) { }
 
   // 获取用户列表
@@ -29,11 +32,12 @@ export class UserListComponent implements OnInit {
           })
       })
     }
-
   }
 
   ngOnInit() {
     this.getUsers();
   }
-
+  ngOnChanges(changes: any){
+    EmitterService.get(this.listId).subscribe(data=>{this.Lists = data})
+  }
 }
