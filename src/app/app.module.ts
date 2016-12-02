@@ -11,9 +11,12 @@ import {HomeComponent} from './pages/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import {CommentModule} from "./comments/comment.module";
-import { UserComponent } from './components/user/user.component';
-import { UserListComponent } from './components/user-list/user-list.component';
-import { UserItemComponent } from './components/user-item/user-item.component';
+import {DashboardComponent} from "./components/dashboard/dashboard.component";
+import { UserCenterComponent } from './pages/user-center/user-center.component';
+import {UsersComponent} from "./components/users/users.component";
+import {UserDetailComponent} from "./components/user-detail/user-detail.component";
+import {AppRoutingModule} from "./app-routing.module";
+import {UserService} from "./services/user.service";
 
 //service
 @NgModule({
@@ -22,9 +25,10 @@ import { UserItemComponent } from './components/user-item/user-item.component';
     HeaderComponent,
     HomeComponent,
     FooterComponent,
-    UserComponent,
-    UserListComponent,
-    UserItemComponent
+    UserCenterComponent,
+    DashboardComponent,
+    UsersComponent,
+    UserDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,13 +36,9 @@ import { UserItemComponent } from './components/user-item/user-item.component';
     ReactiveFormsModule,
     HttpModule,
     CommentModule,
-    RouterModule.forRoot([
-      {
-        path: '', component: HomeComponent
-      }
-    ])
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

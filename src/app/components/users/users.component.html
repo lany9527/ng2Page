@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-6 col-sm-6">
+    <h2>User List</h2>
+    <ul class="users">
+      <li
+        *ngFor="let user of users"
+        [class.selected]="user === selectedUser"
+        (click)="onSelect(user)">
+        <span class="badge">{{user.id}}</span>{{user.name}}
+      </li>
+    </ul>
+  </div>
+  <app-user-detail [user]="selectedUser"></app-user-detail>
+</div>

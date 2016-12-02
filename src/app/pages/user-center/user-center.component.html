@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="list-group">
+        <a routerLink="/usercenter/dashboard" routerLinkActive="active" class="list-group-item">
+          <i class="fa fa-sitemap"></i> Dashboard
+        </a>
+        <a routerLink="/usercenter/users" routerLinkActive="active" class="list-group-item">
+          <i class="fa fa-filter"></i> Users
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

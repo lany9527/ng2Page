@@ -1,0 +1,14 @@
+<div class="col-md-6 col-sm-6">
+<div *ngIf="user">
+  <h2>{{user.name}} details</h2>
+  <div>
+    <label>id: </label>
+    {{user.id}}
+  </div>
+  <div>
+    <label>name: </label>
+    <input type="text" [(ngModel)]="user.name" placeholder="name">
+  </div>
+  <button (click)="goBack()">Back</button>
+</div>
+</div>
