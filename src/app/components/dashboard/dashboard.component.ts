@@ -3,10 +3,9 @@ import {UserService} from "../../services/user.service";
 import {User} from "../../interface/user";
 
 @Component({
-  // moduleId: module.id,
   selector: 'app-dashboard',
-  templateUrl: 'dashboard.component.html',
-  styleUrls: ['dashboard.component.css'],
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css'],
   providers: [UserService]
 })
 export class DashboardComponent implements OnInit {

@@ -3,14 +3,14 @@ import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
+import {InMemoryWebApiModule} from "angular-in-memory-web-api";
+import {InMemoryDataService} from "./services/in-memory-data.service";
 //component
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './components/header/header.component';
-import {RouterModule} from "@angular/router";
 import {HomeComponent} from './pages/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 
-import {CommentModule} from "./comments/comment.module";
 import {DashboardComponent} from "./components/dashboard/dashboard.component";
 import { UserCenterComponent } from './pages/user-center/user-center.component';
 import {UsersComponent} from "./components/users/users.component";
@@ -35,7 +35,7 @@ import {UserService} from "./services/user.service";
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    CommentModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule
   ],
   providers: [UserService],

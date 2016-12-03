@@ -3,6 +3,7 @@
  */
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import {HomeComponent} from "./pages/home/home.component";
 import {UserCenterComponent} from "./pages/user-center/user-center.component";
 import {DashboardComponent} from "./components/dashboard/dashboard.component";
@@ -17,8 +18,8 @@ const routes: Routes = [
     path: 'usercenter', component: UserCenterComponent,
     children: [
       {path: 'dashboard', component: DashboardComponent},
-      {path: 'users', component: UsersComponent},
-      {path: 'detail/:id', component: UserDetailComponent}
+      {path: 'detail/:id', component: UserDetailComponent},
+      {path: 'users', component: UsersComponent}
     ]
   }
 ];
@@ -27,3 +28,9 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule{}
+
+/*
+*
+* <li><a routerLink="/dashboard">Dashboard</a></li>
+ <li><a routerLink="/users">Users</a></li>
+* */

@@ -5,8 +5,8 @@ import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-users',
-  templateUrl: 'users.component.html',
-  styleUrls: ['users.component.css'],
+  templateUrl: './users.component.html',
+  styleUrls: ['./users.component.css'],
   providers: [UserService]
 
 })
@@ -24,7 +24,7 @@ export class UsersComponent implements OnInit {
     this.selectedUser = user;
   }
   gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedUser.id]);
+    this.router.navigate(['/usercenter/detail', this.selectedUser.id]);
   }
   ngOnInit() {
     this.getUsers();
