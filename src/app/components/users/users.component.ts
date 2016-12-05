@@ -26,6 +26,25 @@ export class UsersComponent implements OnInit {
   gotoDetail(): void {
     this.router.navigate(['/usercenter/detail', this.selectedUser.id]);
   }
+  add(name: string): void {
+    name = name.trim();//从字符串中移除前导空格、尾随空格和行终止符。
+    if (!name) {return;}
+    this.userService.create(name)
+      .then(user => {
+        this.users.push(user);
+        this.selectedUser = null;
+      })
+  }
+  delete(user: User): void {
+    this.userService
+      .delete(user.id)
+      .then(()=>{
+        this.users = this.users.filter(u=> u!==user);
+        if (this.selectedUser === user) {
+          this.selectedUser = null;
+        }
+      });
+  }
   ngOnInit() {
     this.getUsers();
   }

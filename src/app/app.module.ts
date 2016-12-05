@@ -5,6 +5,9 @@ import {HttpModule} from '@angular/http';
 
 import {InMemoryWebApiModule} from "angular-in-memory-web-api";
 import {InMemoryDataService} from "./services/in-memory-data.service";
+
+import './rxjs-extensions';
+
 //component
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './components/header/header.component';
@@ -15,10 +18,12 @@ import {DashboardComponent} from "./components/dashboard/dashboard.component";
 import { UserCenterComponent } from './pages/user-center/user-center.component';
 import {UsersComponent} from "./components/users/users.component";
 import {UserDetailComponent} from "./components/user-detail/user-detail.component";
-import {AppRoutingModule} from "./app-routing.module";
-import {UserService} from "./services/user.service";
+import { UserSearchComponent } from './components/user-search/user-search.component';
 
 //service
+import {UserService} from "./services/user.service";
+//module
+import {AppRoutingModule} from "./app-routing.module";
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +34,7 @@ import {UserService} from "./services/user.service";
     DashboardComponent,
     UsersComponent,
     UserDetailComponent,
+    UserSearchComponent,
   ],
   imports: [
     BrowserModule,

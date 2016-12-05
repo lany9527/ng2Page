@@ -23,7 +23,10 @@ export class UserDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
-
+  save(): void {
+    this.userService.update(this.user)
+      .then(()=>this.goBack())
+  }
   ngOnInit(): void {
     this.route.params
       .switchMap((params: Params) => this.userService.getUser(+params['id']))
